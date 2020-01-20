@@ -4,7 +4,10 @@ const db = "mongodb+srv://pawel123:pawel123@devforumbackend-zt0qk.mongodb.net/te
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(db, {useNewUrlParser: true});
+        await mongoose.connect(db, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        });
 
         console.log('MongoDB Connected...');
     } catch (e) {

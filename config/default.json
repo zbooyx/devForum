@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://pawel123:pawel123@devforumbackend-zt0qk.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://pawel123:pawel123@devforumbackend-zt0qk.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "pzsecrettoken"
 }

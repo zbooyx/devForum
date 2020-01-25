@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://pawel123:pawel123@devforumbackend-zt0qk.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtSecret": "pzsecrettoken"
+  "jwtSecret": "pzsecrettoken",
+  "githubClientId": "3e4d9beedaf6f8bf43fc",
+  "githubClientSecret": "f34e46cd67f218eb07c33e946736b13be29d11a5"
 }

@@ -10,18 +10,27 @@ const Register = () => {
 
   const {name, email, password, password2} = formData;
   const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
+  const onSubmit = e => {
+    e.preventDefault();
+    if (password !== password2) {
+      console.log('Pass do not match')
+    } else {
+      console.log(formData, e)
+    }
+  };
 
   return (
     <Fragment>
       <h1 className="large text-primary">Sign Up</h1>
       <p className="lead"><i className="fas fa-user"/> Create Your Account</p>
-      <form className="form" action="create-profile.html">
+      <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
           <input
             type="text"
             placeholder="Name"
             name="name"
             value={name}
+            onChange={e => onChange(e)}
             required
           />
         </div>

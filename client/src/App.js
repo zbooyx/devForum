@@ -19,7 +19,7 @@ if (localStorage.token) {
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
-  },[]);
+  }, []);
   return (
     <Provider store={store}>
       <Router>
@@ -37,6 +37,6 @@ const App = () => {
       </Router>
     </Provider>
   )
-}
+};
 
 export default App;

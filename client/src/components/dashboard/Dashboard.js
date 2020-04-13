@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
+// import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 import {getCurrentProfile} from "../../actions/profile";
-import auth from "../../reducers/auth";
-import profile from "../../reducers/profile";
+// import auth from "../../reducers/auth";
+// import profile from "../../reducers/profile";
 
 const Dashboard = ({getCurrentProfile, auth, profile}) => {
     useEffect(() => {
@@ -23,7 +23,7 @@ Dashboard.propTypes = {
     profile: PropTypes.object.isRequired,
 }
 
-const mapToStateProps = state => ({
+const mapStateToProps = state => ({
     auth: state.auth,
     profile: state.profile
 });

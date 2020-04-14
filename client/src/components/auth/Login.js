@@ -1,8 +1,9 @@
 import React, {Fragment, useState} from "react";
 import {connect} from 'react-redux';
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {login} from "../../actions/auth";
 import PropTypes from 'prop-types';
+import Redirect from "react-router-dom/es/Redirect";
 
 
 const Login = ({login, isAuthenticated}) => {
@@ -18,7 +19,7 @@ const Login = ({login, isAuthenticated}) => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    console.log('success');
+    console.log('You sent the username and email');
     login(email, password)
   };
 

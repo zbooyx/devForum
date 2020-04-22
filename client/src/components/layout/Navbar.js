@@ -6,54 +6,60 @@ import {logout} from "../../actions/auth";
 
 const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
 
-  const authLinks = (
-    <ul>
-      <li>
-        <a onClick={logout} href="#!">
-          <i className="fas fa-sign-out-alt"/>{' '}
-          <span className="hide-sm"> Logout</span>
-        </a>
-      </li>
+    const authLinks = (
+        <ul>
+            <li>
+                <a> <Link to='/dashboard'/>
+                    <i className="fas fa-user"/>{' '}
+                    <span className="hide-sm">Dashboard</span></a>
 
-    </ul>
-  );
-  const guestLinks = (
-    <ul>
-      <li>
-        <a href="#!">
-          <span className="hide-sm"> Developers</span>
-        </a>
-      </li>
-      <li>
-        <Link to='/register'>Register</Link>
-      </li>
-      <li>
-        <Link to='/login'>Login</Link>
-      </li>
+            </li>
+            <li>
+                <a onClick={logout} href="#!">
+                    <i className="fas fa-sign-out-alt"/>{' '}
+                    <span className="hide-sm"> Logout</span>
+                </a>
+            </li>
 
-    </ul>
-  );
+        </ul>
+    );
+    const guestLinks = (
+        <ul>
+            <li>
+                <a href="#!">
+                    <span className="hide-sm"> Developers</span>
+                </a>
+            </li>
+            <li>
+                <Link to='/register'>Register</Link>
+            </li>
+            <li>
+                <Link to='/login'>Login</Link>
+            </li>
 
-  return (
-    <nav className="navbar bg-dark">
-      <h1>
-        <Link to="/">
-          <i className="fas fa-dragon"/> DevForum
-        </Link>
-      </h1>
-      {!loading && (<Fragment>
-        {isAuthenticated ? authLinks : guestLinks}
-      </Fragment>)}
-    </nav>
-  )
+        </ul>
+    );
+
+    return (
+        <nav className="navbar bg-dark">
+            <h1>
+                <Link to="/">
+                    <i className="fas fa-dragon"/> DevForum
+                </Link>
+            </h1>
+            {!loading && (<Fragment>
+                {isAuthenticated ? authLinks : guestLinks}
+            </Fragment>)}
+        </nav>
+    )
 };
 
 Navbar.propTypes = {
-  logout: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+    logout: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+    auth: state.auth
 });
 export default connect(mapStateToProps, {logout})(Navbar);
